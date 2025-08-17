@@ -5,7 +5,13 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-model = load_model('model.h5')
+model_option = st.selectbox("Choose a model:", ["LSTM", "GRU"])
+
+if model_option == "Model v1":
+    model = load_model("model.h5")
+elif model_option == "Model v2":
+    model = load_model("GRU model.h5")
+
 with open('tokenizer.pkl','rb') as file:
     tokenizer=pickle.load(file)
 
@@ -36,3 +42,4 @@ n_words = int(st.number_input('Enter how many words you want to predict: ',3))
 if st.button('Predict'):
     predicted_words = next_n_word_predictions(text,n_words)
     st.text_area(f'📘 Predicted text (next {n_words} words):', predicted_words)
+
