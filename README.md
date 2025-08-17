@@ -1,3 +1,5 @@
+# URL - https://9rxsog76fzduhmwgj5xlkp.streamlit.app/
+
 # LSTM Next-Word Prediction App (Hamlet Dataset)
 
 This is a Streamlit-based web application that uses LSTM models trained on Shakespeare's *Hamlet* to perform next-word prediction. Users can input a seed sentence and choose how many words they want the model to generate. The app also allows switching between 2 pre-trained RNN models.
